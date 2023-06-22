@@ -1,0 +1,157 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h1>Customer Details</h1>
+    </div>
+    <form name="customerForm" [formGroup]="customerform">
+      <div class="example-container">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Date</mat-label>
+          <input formControlName="date" type="date" matInput />
+
+          <mat-error *ngIf="!customerform.controls['date'].valid">
+            Date is required
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Customer Name</mat-label>
+          <input formControlName="name" matInput placeholder="Customer Name" />
+          <mat-error *ngIf="!customerform.controls['name'].valid">
+            Customer name is required
+          </mat-error>
+        </mat-form-field>
+        <span *ngIf="selected">Grand Total: {{calculateGrandtotal()}}</span>
+
+        <button mat-raised-button class="button-row button-width" type="submit" color="warn"
+          (click)="postCustomerDetails()">
+          Save
+        </button>
+      </div>
+      <div class="example-container">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Mobile Number</mat-label>
+          <input formControlName="mobile" type="number" matInput />
+         <!-- <mat-error *ngIf="!customerform.controls['mobile'].valid && !showrequire">
+            Mobile number is required
+          </mat-error> -->
+          <mat-error *ngIf="customerform.get('mobile').hasError('required')">
+            Phone number is Required
+          </mat-error>
+      
+          <mat-error *ngIf="customerform.get('mobile').hasError('pattern')">     
+             Phone Number must be 10 digits.
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Customer Address</mat-label>
+          <textarea formControlName="address" matInput></textarea>
+        </mat-form-field>
+      </div>
+      <div class="button-row">
+        <button mat-raised-button (click)="openDialog()" color="warn">Add Product</button>
+      </div>
+      <div class="demo-button-container tbutton-row">
+
+        <!-- <button mat-raised-button (click)="addData()" class="demo-button add"> <mat-icon class="add">add_circle</mat-icon>
+    </button> -->
+        <button mat-raised-button class="demo-button add" (click)="addProduct()">
+          <mat-icon class="add">add_circle</mat-icon>
+        </button> 
+      </div>
+      <!-- </form> -->
+      <!-- <form name="productForm" [formGroup]="productForm"> -->
+      <div>
+        <table formArrayName="products" style="margin: 2%;width:95% ;padding:2%;"
+          class="mat-table cdk-table mat-elevation-z8 demo-table">
+          <thead>
+            <tr>
+              <td>Product Code</td>
+              <td>Product Name</td>
+              <td>Quantity</td>
+              <td>Price</td>
+              <td>Total</td>
+              <td>Action</td>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr *ngFor="let element of productsArray.controls;let i=index" [formGroupName]="i"> -->
+            <!-- <tr *ngFor="let element of customerform.get('products')['controls']; let i=index" [formGroupName]="i"> -->
+            <tr *ngFor="let element of customerform.get('products').controls; let i=index" [formGroupName]="i">
+
+              <td ngDefaultControl>
+                {{element.value.pdtcode}}
+                <!-- 
+                <mat-form-field class="tcolfull-width" appearance="outline">
+                  <input matInput formControlName="pdtcode" value="{{element.value.pdtcode}}" [readonly]="true" /> -->
+                <!-- <input matInput formControlName="pdtcode"/> {{element.value.pdtcode}} -->
+                <!-- <input matInput name="pdtcode" formControlName="pdtcode" [value]="element.value.pdtcode" /> -->
+                <!-- </mat-form-field> -->
+                <!-- <mat-form-field class="tcolfull-width" appearance="outline" *ngIf="addnew && i">
+                  <input matInput type="number" disabled />
+                </mat-form-field> -->
+              </td>
+              <td ngDefaultControl>
+                <mat-form-field appearance="outline" class="dropdown">
+                  <mat-label>Select</mat-label>
+                  <mat-select formControlName="pdtname" (click)="loadpdt()">
+                    <!--//$event.value-->
+                    <mat-option *ngFor="let element of productCodeData" [value]="element.name"
+                      (click)="someMethod(element,i)">{{element.name}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </td>
+              <td ngDefaultControl>
+                <mat-form-field class="tcolfull-width" appearance="outline">
+                  <input matInput formControlName="quantity" type="number" (input)="quantityChange(element,i)"
+                    placeholder="Quantity" required />
+                </mat-form-field>
+              </td>
+
+              <!-- <td ngDefaultControl>
+                <mat-form-field class="tcolfull-width" appearance="outline">
+                  <input matInput formControlName="price" value="{{element.value.pdtprice}}"/>
+                  <input matInput formControlName="pdtprice" [value]="element.value.pdtprice" /> -->
+
+              <!-- </mat-form-field>
+              </td> -->
+              <td ngDefaultControl>
+                {{element.value.pdtprice}}
+
+              </td>
+              <!-- <td ngDefaultControl formControlName="total">
+                <mat-form-field class="tcolfull-width" appearance="outline">
+                  <input matInput type="number" placeholder="total" [readonly]="true" value="{{element.value.total}}" />
+                </mat-form-field>
+              </td> -->
+              <td ngDefaultControl>
+                {{element.value.total}}
+              </td>
+              <td>
+                <mat-icon class="delete" (click)="deleteRow(i)">delete</mat-icon>   
+              </td>
+              <!-- <ng-container>
+                <button mat-icon-button color="warn" style="padding-top:20px;">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </ng-container> -->
+
+            </tr>
+          </tbody>
+          <!-- <tfoot>
+            <tr>
+              <td colspan="7">
+                <a mat-raised-button color="primary" (click)="addProduct()">Add New (+)</a>
+              </td>
+            </tr>
+          </tfoot> -->
+
+        </table>
+      </div>
+      <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;let i=index"></tr> -->
+      <!-- <h1>{{grandtotal}}</h1> -->
+    </form>
+
+  </mat-card-content>
+</mat-card>

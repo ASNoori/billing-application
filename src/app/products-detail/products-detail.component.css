@@ -1,0 +1,34 @@
+.example-container .mat-form-field + .mat-form-field {
+    margin-left: 20px;
+  }
+
+  .full-width {
+    width: 30%;
+  }
+ 
+  .demo-table {
+    width: 100%;
+  }
+  
+ 
+  .dropdown{
+    padding:10px;
+  }
+ .tcolfull-width{
+   width:40%;
+  }
+  .navbar{
+    justify-content: space-between;
+}
+
+span{
+    padding-right: 1rem;
+}
+table{
+  width:80%;
+}
+.mat-form-field{
+  font-size:14px;
+  width:30%;
+  margin:20px;
+}

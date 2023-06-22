@@ -1,0 +1,110 @@
+<mat-card>
+    <mat-card-content>
+        <div class="header">
+            <h1>Customer Details</h1>
+        </div>
+        <form [formGroup]="customerform" name="customerForm">
+            <div class="example-container">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Date</mat-label>
+                    <input matInput type="date" formControlName="date"  required />
+
+                    <mat-error *ngIf="!customerform.controls['date'].valid">
+                        Date is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Customer Name</mat-label>
+                    <input formControlName="name" matInput placeholder="Customer Name" required />
+                    <mat-error *ngIf="!customerform.controls['name'].valid">
+                        Customer name is required
+                    </mat-error>
+                </mat-form-field>
+                <button mat-raised-button class="button-row button-width" type="submit" color="warn"
+                    (click)="postCustomerDetails()">
+                    Save
+                </button>
+            </div>
+            <div class="example-container">
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Mobile Number</mat-label>
+                    <input formControlName="mobile" type="number" matInput required />
+
+                    <mat-error *ngIf="!customerform.controls['mobile'].valid && !showrequire">
+                        Mobile number is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Customer Address</mat-label>
+                    <textarea formControlName="address" matInput></textarea>
+                </mat-form-field>
+            </div>
+            <div class="button-row">
+                <button mat-raised-button (click)="openDialog()" color="warn">Add Product</button>
+            </div>
+            <div class="demo-button-container tbutton-row">
+
+                <!-- <button mat-raised-button (click)="addData()" class="demo-button add"> <mat-icon class="add">add_circle</mat-icon>
+      </button> -->
+                <button mat-raised-button class="demo-button add" (click)="addProduct()">
+                    <mat-icon class="add">add_circle</mat-icon>
+                </button>
+            </div>
+            <div formArrayName="products" style="margin: 2%;width:95% ;padding:2%;">
+                <table class="mat-table mat-elevation-z8">
+                    <thead>
+                        <tr>
+                            <th>Product Code</th>
+                            <th>Product Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let element of productsArray?.controls; let i=index" [formGroupName]="i">
+                            <td>
+                                <mat-form-field class="tcolfull-width" appearance="outline">
+                                    <input matInput type="text" formControlName="pdtcode" value="{{element.value.pdtcode}}"
+                                        [readonly]="true" />
+                                    <!-- <input matInput formControlName="pdtcode"/> {{element.value.pdtcode}} -->
+                                    <!-- <input matInput name="pdtcode" formControlName="pdtcode" [value]="element.value.pdtcode" /> -->
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field appearance="outline" class="dropdown">
+                                    <mat-label>Select</mat-label>
+                                    <mat-select formControlName="pdtname" (selectionChange)="someMethod($event,i)">
+                                        <!--//$event.value-->
+                                        <mat-option *ngFor="let element of productCodeData" [value]="element">
+                                            {{element.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="tcolfull-width" appearance="outline">
+                                    <input matInput type="number" formControlName="quantity" 
+                                        required />
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="tcolfull-width" appearance="outline">
+                                    <input matInput formControlName="price" value="{{element.value.pdtprice}}"
+                                        [readonly]="true" />
+                                    <!-- <input matInput formControlName="pdtprice" [value]="element.value.pdtprice" /> -->
+
+                                </mat-form-field>
+                            </td>
+                            <td>
+                                <mat-form-field class="tcolfull-width" appearance="outline">
+                                    <input matInput type="number" placeholder="total" disabled />
+                                </mat-form-field>
+                            </td>
+                    </tbody>
+                </table>
+            </div>
+
+        </form>
+    </mat-card-content>
+</mat-card>

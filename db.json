@@ -1,0 +1,478 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "signupusers": [
+    {
+      "fullname": "admin",
+      "mobile": "5579",
+      "email": "admin@sd",
+      "password": "admin_12",
+      "id": "0_OrFjD"
+    },
+    {
+      "fullname": "noori",
+      "mobile": 7578798,
+      "email": "noori@gmail.com",
+      "password": "12345",
+      "id": "tqT8iye"
+    },
+    {
+      "fullname": null,
+      "mobile": 12345,
+      "email": null,
+      "password": "12345",
+      "id": "ltwqqp6"
+    },
+    {
+      "fullname": "Sharfu",
+      "mobile": 74584386,
+      "email": "sharfu@gnail.com",
+      "password": "65668",
+      "id": "TAFE25D"
+    },
+    {
+      "fullname": "bn",
+      "mobile": 12345,
+      "email": "7894",
+      "password": "po",
+      "id": "siMKlev"
+    }
+  ],
+  "products": [
+    {
+      "name": "sample",
+      "price": 569,
+      "code": 6768,
+      "id": 3
+    },
+    {
+      "name": "test",
+      "price": 560,
+      "code": 67689,
+      "id": 4
+    },
+    {
+      "name": "Sample pdt",
+      "price": 90,
+      "code": 67543,
+      "id": 5
+    },
+    {
+      "name": "Sample test",
+      "price": 45,
+      "code": 87234,
+      "id": 9
+    },
+    {
+      "name": "smple pdt",
+      "price": 78,
+      "code": 2573,
+      "id": 10
+    },
+    {
+      "name": "test pdt",
+      "price": 67,
+      "code": 2657,
+      "id": 11
+    },
+    {
+      "name": "noodles",
+      "price": 42,
+      "code": 2856,
+      "id": 14
+    },
+    {
+      "name": "bj",
+      "price": 6,
+      "code": 4,
+      "id": 17
+    },
+    {
+      "name": "c",
+      "price": 23,
+      "code": 3,
+      "id": 18
+    },
+    {
+      "name": "bn",
+      "price": 45,
+      "code": 12,
+      "id": 19
+    },
+    {
+      "name": "new pdt",
+      "price": 65,
+      "code": 3487,
+      "id": 20
+    }
+  ],
+  "productname": [
+    {
+      "name": "bj",
+      "price": 6,
+      "code": 4,
+      "id": 3
+    },
+    {
+      "name": "c",
+      "price": 23,
+      "code": 3,
+      "id": 4
+    },
+    {
+      "name": "bn",
+      "id": 5
+    },
+    {
+      "name": "tt",
+      "id": 6
+    },
+    {
+      "name": "tt",
+      "price": 56,
+      "code": 78,
+      "id": 7
+    },
+    {
+      "name": "new pdt",
+      "id": 8
+    }
+  ],
+  "productcode": [
+    {
+      "id": 1
+    },
+    {
+      "name": "new pdt",
+      "price": 65,
+      "code": 3487,
+      "id": 2
+    }
+  ],
+  "productprice": [
+    {
+      "id": 1
+    },
+    {
+      "name": "tt",
+      "price": 56,
+      "id": 2
+    },
+    {
+      "name": "tt",
+      "price": 56,
+      "code": 78,
+      "id": 3
+    },
+    {
+      "name": "new pdt",
+      "price": 65,
+      "id": 4
+    }
+  ],
+  "productform": [
+    {
+      "id": 1
+    },
+    {
+      "name": "",
+      "id": 2
+    }
+  ],
+  "customerorderdetails": [
+    {
+      "name": "cv",
+      "address": "vnhvkkjlkj",
+      "pdtname": "",
+      "date": "2022-11-15",
+      "mobile": 6576868,
+      "products": [
+        {
+          "pdtcode": 3457,
+          "pdtname": "test pdt",
+          "quantity": 2,
+          "pdtprice": 56,
+          "total": 112
+        },
+        {
+          "pdtcode": 3457,
+          "pdtname": "test pdt",
+          "quantity": 2,
+          "pdtprice": 56,
+          "total": 112
+        }
+      ],
+      "grandtotal": 224,
+      "id": 48
+    },
+    {
+      "name": "cc",
+      "address": "sfsdgdfh",
+      "pdtname": "",
+      "date": "2022-11-18",
+      "mobile": 457,
+      "products": [
+        {
+          "pdtcode": 3457,
+          "pdtname": "test pdt",
+          "quantity": 2,
+          "pdtprice": 56,
+          "total": 112
+        },
+        {
+          "pdtcode": 67543,
+          "pdtname": "Sample pdt",
+          "quantity": 1,
+          "pdtprice": 90,
+          "total": 90
+        }
+      ],
+      "grandtotal": 202,
+      "id": 57
+    },
+    {
+      "name": "gfhgygy",
+      "address": "cfghgjknkjn",
+      "pdtname": "",
+      "date": "2022-11-25",
+      "mobile": 657887,
+      "products": [
+        {
+          "pdtcode": 67689,
+          "pdtname": "test",
+          "quantity": 3,
+          "pdtprice": 560,
+          "total": 1680
+        },
+        {
+          "pdtcode": 3457,
+          "pdtname": "test pdt",
+          "quantity": 5,
+          "pdtprice": 56,
+          "total": 280
+        }
+      ],
+      "grandtotal": 1960,
+      "id": 59
+    },
+    {
+      "name": "v",
+      "address": "kmfhklg",
+      "pdtname": "",
+      "date": "2022-11-30",
+      "mobile": 5757,
+      "products": [
+        {
+          "pdtcode": 3457,
+          "pdtname": "test pdt",
+          "quantity": 2,
+          "pdtprice": 56,
+          "total": 112
+        },
+        {
+          "pdtcode": 67543,
+          "pdtname": "Sample pdt",
+          "quantity": 1,
+          "pdtprice": 90,
+          "total": 90
+        }
+      ],
+      "grandtotal": 202,
+      "id": 61
+    },
+    {
+      "name": "ghf",
+      "address": "gjhgj",
+      "pdtname": "",
+      "date": "2022-11-26",
+      "mobile": 6,
+      "products": [
+        {
+          "pdtcode": 67543,
+          "pdtname": "Sample pdt",
+          "quantity": 2,
+          "pdtprice": 90,
+          "total": 180
+        }
+      ],
+      "grandtotal": 180,
+      "id": 62
+    },
+    {
+      "name": "vb",
+      "address": "gfhygjbn",
+      "pdtname": "",
+      "date": "2022-11-26",
+      "mobile": 7676788,
+      "products": [
+        {
+          "pdtcode": 67689,
+          "pdtname": "test",
+          "quantity": 5,
+          "pdtprice": 560,
+          "total": 2800
+        }
+      ],
+      "grandtotal": 2800,
+      "id": 63
+    },
+    {
+      "name": "v",
+      "address": "hgfh",
+      "pdtname": "",
+      "date": "2022-11-26",
+      "mobile": 657,
+      "products": [
+        {
+          "pdtcode": 67543,
+          "pdtname": "Sample pdt",
+          "quantity": 7,
+          "pdtprice": 90,
+          "total": 630
+        }
+      ],
+      "grandtotal": 630,
+      "id": 64
+    },
+    {
+      "name": "noori",
+      "address": "test address",
+      "pdtname": "",
+      "date": "2022-11-15",
+      "mobile": 6467689089,
+      "products": [
+        {
+          "pdtcode": 3487,
+          "pdtname": "new pdt",
+          "quantity": 2,
+          "pdtprice": 65,
+          "total": 130
+        }
+      ],
+      "grandtotal": 130,
+      "id": 65
+    },
+    {
+      "name": "xxx",
+      "address": "yyy",
+      "pdtname": "",
+      "date": "2022-11-24",
+      "mobile": 7865325989,
+      "products": [
+        {
+          "pdtcode": 12,
+          "pdtname": "bn",
+          "quantity": 7,
+          "pdtprice": 45,
+          "total": 315
+        }
+      ],
+      "grandtotal": 315,
+      "id": 76
+    },
+    {
+      "name": "yyy",
+      "address": "uuu",
+      "pdtname": "",
+      "date": "2022-11-30",
+      "mobile": 7488757689,
+      "products": [
+        {
+          "pdtcode": 2657,
+          "pdtname": "test pdt",
+          "quantity": 5,
+          "pdtprice": 67,
+          "total": 335
+        }
+      ],
+      "grandtotal": 335,
+      "id": 77
+    },
+    {
+      "name": "nnn",
+      "address": "bbb",
+      "pdtname": "",
+      "date": "2022-11-28",
+      "mobile": 5667868988,
+      "products": [
+        {
+          "pdtcode": 87234,
+          "pdtname": "Sample test",
+          "quantity": 9,
+          "pdtprice": 45,
+          "total": 405
+        }
+      ],
+      "grandtotal": 405,
+      "id": 78
+    },
+    {
+      "name": "vvv",
+      "address": "ccc",
+      "pdtname": "",
+      "date": "2022-11-05",
+      "mobile": 6778988989,
+      "products": [
+        {
+          "pdtcode": 87234,
+          "pdtname": "Sample test",
+          "quantity": 9,
+          "pdtprice": 45,
+          "total": 405
+        }
+      ],
+      "grandtotal": 405,
+      "id": 79
+    },
+    {
+      "name": "",
+      "address": null,
+      "pdtname": "",
+      "date": "",
+      "mobile": "",
+      "products": [
+        {
+          "pdtcode": 87234,
+          "pdtname": "Sample test",
+          "quantity": 7,
+          "pdtprice": 45,
+          "total": 315
+        }
+      ],
+      "grandtotal": 315,
+      "id": 80
+    },
+    {
+      "name": "",
+      "address": null,
+      "pdtname": "",
+      "date": "",
+      "mobile": "",
+      "products": [
+        {
+          "pdtcode": null,
+          "pdtname": "",
+          "quantity": "",
+          "pdtprice": null,
+          "total": null
+        }
+      ],
+      "id": 81
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

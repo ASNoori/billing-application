@@ -1,0 +1,25 @@
+.demo-table {
+    width: 100%;
+  }
+  
+  .demo-button-container {
+    padding-bottom: 16px;
+  }
+  
+  .demo-button + .demo-button {
+    margin-left: 8px;
+   
+  }
+  .button-row {
+    padding-top: 15px;
+    margin-left:1200px;
+  }
+  .add{
+    color:green;
+  }
+  .dropdown{
+    padding:10px;
+  }
+ .full-width{
+   width:40%;
+  }

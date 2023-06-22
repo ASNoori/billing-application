@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" class="navbar">
+    <div>
+      <button mat-button  (click)="opened=!opened">
+      <mat-icon>menu</mat-icon>
+      </button>Product Billing App</div>
+    <div>
+    <span routerLink="/login">Logout</span>
+  </div>
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav [(opened)]="opened" mode="side">
+        <mat-nav-list>
+        <a routerLink="/billing" mat-list-item>Billing</a>
+        <a routerLink="/sales" mat-list-item>Sales</a>
+        <a routerLink="/product" mat-list-item>Product Details</a>
+
+    </mat-nav-list>
+    </mat-sidenav>
+     <mat-sidenav-content>
+      <div style="height:88hvh; font-weight: bold;">
+        <app-bill-detail></app-bill-detail>
+    </div>
+    <mat-toolbar color="primary" class="footer" >
+      My Material App 	&copy; copyrights reserved.
+      </mat-toolbar>
+    
+   
+    </mat-sidenav-content>
+    
+  </mat-sidenav-container>
+
+  
+ 
+ 
